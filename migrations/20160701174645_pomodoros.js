@@ -1,9 +1,9 @@
 
 exports.up = function(knex, Promise) {
   return knex.schema.createTable('pomodoro', function(table){
-    table.increments();
+    table.increments('id');
     table.string('name').notNullable();
-    table.string('user_id').notNullable();
+    table.integer('user_id').references('users.id').onDelete('CASCADE').onUpdate('CASCADE');
   })
 
 };
