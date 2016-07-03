@@ -1,4 +1,4 @@
- const express = require('express');
+const express = require('express');
 const router = express.Router();
 const knex = require('knex')(require('../knexfile')[process.env.DB_ENV || 'development']);
 
