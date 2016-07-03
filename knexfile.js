@@ -3,13 +3,21 @@ require('dotenv').load();
 module.exports = {
 
   development: {
-    client: 'pg',
-    connection: 'postgres://localhost/pomodoro'
+    client: 'postgresql',
+    connection: process.env.DATABASE_URL,
+    pool: {
+      min: 1,
+      max: 1
+    }
   },
 
   production: {
-    client: 'pg',
-    connection: process.env.DATABASE_URL
+    client: 'postgresql',
+    connection: process.env.DATABASE_URL,
+    pool: {
+      min: 1,
+      max: 1
+    }
   }
 
 };
