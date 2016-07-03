@@ -1,6 +1,6 @@
-const express = require('express');
-const router = express.Router();
-const knex = require('knex')(require('../knexfile')[process.env.DB_ENV || 'development']);
+var express = require('express');
+var router = express.Router();
+var knex = require('knex')(require('../knexfile')[process.env.DB_ENV || 'development']);
 
 router.post('/', function(req, res, next) {
   knex('users')
