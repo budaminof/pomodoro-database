@@ -51,7 +51,7 @@ router.post('/', function(req, res, next) {
 router.get('/:phoneId', function(req, res, next){
   console.log("************************************************");
   knex('users')
-  .where({phone_id: req.params.phone_id})
+  .where({phone_id: req.params.phoneId})
   .innerJoin('pomodoro', 'pomodoro.user_id', 'users.id')
   .then(function(res){
     console.log(res);
