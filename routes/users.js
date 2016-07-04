@@ -53,9 +53,9 @@ router.get('/:phoneId', function(req, res, next){
   knex('users')
   .where({phone_id: req.params.phoneId})
   .innerJoin('pomodoro', 'pomodoro.user_id', 'users.id')
-  .then(function(res){
-    console.log(res);
-    return res.status(200).json(res[0]);
+  .then(function(response){
+    console.log(response);
+    return res.status(200).json(response[0]);
   })
 })
 module.exports = router;
