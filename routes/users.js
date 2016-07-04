@@ -55,7 +55,7 @@ router.get('/:phoneId', function(req, res, next){
   .innerJoin('pomodoro', 'pomodoro.user_id', 'users.id')
   .then(function(response){
     console.log(response);
-    return res.status(200).json(response[0]);
+    return res.status(200).json(response);
   })
 })
 module.exports = router;
