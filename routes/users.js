@@ -49,8 +49,8 @@ router.post('/', function(req, res, next) {
 
 router.get('/:phoneId', function(req, res, next){
   console.log("********************");
-  var today = moment().calendar();
-  var lastweeek = moment().subtract(6, 'days').calendar();
+  var today = new Date();
+  var lastWeek = new Date(today.getFullYear(), today.getMonth(), today.getDate() - 7);
 
   knex('users')
   .where({ phone_id: req.params.phoneId })
