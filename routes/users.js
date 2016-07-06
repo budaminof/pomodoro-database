@@ -18,6 +18,7 @@ router.post('/', function(req, res, next) {
             knex('pomodoro')
               .insert({
                 name: req.body.name,
+                created_at: req.body.created_at,
                 user_id: user[0].id,
               })
               .returning('*')
@@ -33,6 +34,7 @@ router.post('/', function(req, res, next) {
         knex('pomodoro')
           .insert({
             name: req.body.name,
+            created_at: req.body.created_at,
             user_id: user[0].id,
           })
           .returning('*')
@@ -49,7 +51,6 @@ router.post('/', function(req, res, next) {
 
 router.get('/:phoneId', function(req, res, next){
   console.log("********************");
-
   knex('users')
   .where({ phone_id: req.params.phoneId })
   .whereBetween('created_at', [ moment().subtract(6, 'days').format('YYYY-MM-DD'), moment().format('YYYY-MM-DD') ])
