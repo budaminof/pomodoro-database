@@ -54,7 +54,7 @@ router.get('/:phoneId', function(req, res, next){
 
   knex('users')
   .where({ phone_id: req.params.phoneId })
-  .whereBetween(created_at, [ lastweeek, today ])
+  .whereBetween('created_at', [ lastweeek, today ])
   .innerJoin('pomodoro', 'pomodoro.user_id', 'users.id')
   .then(function(response){
     console.log(response);
