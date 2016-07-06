@@ -19,7 +19,6 @@ router.post('/', function(req, res, next) {
             knex('pomodoro')
               .insert({
                 name: req.body.name,
-                created_at: req.body.created_at,
                 user_id: user[0].id,
               })
               .returning('*')
@@ -35,7 +34,6 @@ router.post('/', function(req, res, next) {
         knex('pomodoro')
           .insert({
             name: req.body.name,
-            created_at: req.body.created_at,
             user_id: user[0].id,
           })
           .returning('*')
