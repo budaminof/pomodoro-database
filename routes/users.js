@@ -5,6 +5,7 @@ var moment = require('moment');
 
 router.post('/', function(req, res, next) {
   console.log("**********************************************************************");
+  console.log("adding with new Date");
   knex('users')
     .where({phone_id: req.body.phone_id})
     .then(function (user) {
