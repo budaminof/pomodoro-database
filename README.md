@@ -1,3 +1,3 @@
 ### Pomodoro Database
 
-This is my databse repo for my Pomodoro App.
+This is my database repo for my Pomodoro App.
